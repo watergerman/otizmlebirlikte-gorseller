@@ -16,3 +16,4 @@ Yeni gönderi hazırlarken bu listeyi kontrol et, aynı konuyu tekrarlama. Her h
 - [carousel] Öfke nöbeti anında ne yapmalı? — Tiger 2008, Steinbrenner 2020
 - [ipucu] Çocuğunuzu taklit edin — Ingersoll 2010
 - [carousel] Konuşmayan çocukların kaçı konuşuyor? — Vivanti 2025
+- [reels] Otizmli bir çocuğun velisine bu 3 cümleyi söylemeyin (büyüyünce geçer, disiplin, otizmli gibi görünmüyor)
