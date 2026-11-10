@@ -17,3 +17,8 @@ Yeni gönderi hazırlarken bu listeyi kontrol et, aynı konuyu tekrarlama. Her h
 - [ipucu] Çocuğunuzu taklit edin — Ingersoll 2010
 - [carousel] Konuşmayan çocukların kaçı konuşuyor? — Vivanti 2025
 - [reels] Otizmli bir çocuğun velisine bu 3 cümleyi söylemeyin (büyüyünce geçer, disiplin, otizmli gibi görünmüyor)
+- [reels · Bilim Ne Diyor?] Kardeşte otizm olasılığı %20,2 — Ozonoff 2024, Pediatrics
+- [reels · Bilim Ne Diyor?] Kızlarda geç tanı, maskeleme, 3:1 oran — Loomes 2017, Hull 2017
+- [reels · Bilim Ne Diyor?] Çift empati problemi, diffusion chain — Crompton 2020, Autism
+- [reels · Bilim Ne Diyor?] Mikrobiyota farkı seçici beslenmeden — Yap 2021, Cell
+- [reels · Bilim Ne Diyor?] Bebeklerde göze bakma 2–6 ayda azalıyor — Jones & Klin 2013, Nature
