@@ -41,13 +41,13 @@ def frame(inner, k, n, dur):
     a, b = (k-1)/n, k/n
     return f'<div class="b1"></div><div class="b2"></div><div class="bar"><i style="--a:{a};--b:{b};animation-duration:{dur}s"></i></div><div class="sig">@otizmlebirlikte<small>Otizm Spektrum Bozukluğu Eğitimi Uzmanı</small></div>{inner}'
 
-def s_hook(text): return 3.2, f'<div class="wrap"><div class="tag up" style="animation-delay:.05s">Bilim Ne Diyor?</div><div class="hook up" style="animation-delay:.2s">{text}</div></div>'
-def s_stat(big, lab, sub): return 3.8, f'<div class="wrap"><div class="big pop" style="animation-delay:.1s">{big}</div><div class="blab up" style="animation-delay:.6s">{lab}</div><div class="bsub up" style="animation-delay:1.1s">{sub}</div></div>'
+def s_hook(text): return 4.2, f'<div class="wrap"><div class="tag up" style="animation-delay:.05s">Bilim Ne Diyor?</div><div class="hook up" style="animation-delay:.2s">{text}</div></div>'
+def s_stat(big, lab, sub): return 6.5, f'<div class="wrap"><div class="big pop" style="animation-delay:.1s">{big}</div><div class="blab up" style="animation-delay:.6s">{lab}</div><div class="bsub up" style="animation-delay:1.1s">{sub}</div></div>'
 def s_points(t, pts):
-    body = "".join(f'<div class="pt up" style="animation-delay:{.35+i*1.0:.2f}s">{p}</div>' for i,p in enumerate(pts))
-    return 2.2 + 1.6*len(pts), f'<div class="wrap"><div class="ttl up" style="animation-delay:.05s">{t}</div>{body}</div>'
-def s_not(text, lab="NE ANLAMA GELMİYOR?"): return 4.2, f'<div class="wrap"><div class="nm pop" style="animation-delay:.1s"><span>{lab}</span><p>{text}</p></div></div>'
-def s_act(lab, text, ask, src): return 5.0, f'<div class="wrap"><div class="ac pop" style="animation-delay:.1s"><span>{lab}</span><p>{text}</p></div><div class="ask up" style="animation-delay:1.3s">{ask}</div></div><div class="src up" style="animation-delay:1.6s">Kaynak: {src}</div>'
+    body = "".join(f'<div class="pt up" style="animation-delay:{.35+i*1.6:.2f}s">{p}</div>' for i,p in enumerate(pts))
+    return 3.0 + 3.6*len(pts), f'<div class="wrap"><div class="ttl up" style="animation-delay:.05s">{t}</div>{body}</div>'
+def s_not(text, lab="NE ANLAMA GELMİYOR?"): return 8.0, f'<div class="wrap"><div class="nm pop" style="animation-delay:.1s"><span>{lab}</span><p>{text}</p></div></div>'
+def s_act(lab, text, ask, src): return 9.5, f'<div class="wrap"><div class="ac pop" style="animation-delay:.1s"><span>{lab}</span><p>{text}</p></div><div class="ask up" style="animation-delay:1.3s">{ask}</div></div><div class="src up" style="animation-delay:1.6s">Kaynak: {src}</div>'
 
 REELS = {
  "r2-kardes": [
@@ -109,16 +109,24 @@ async def build(slug, scenes, pg, stills):
     if stills: return
     open(f"{out}/list.txt","w").write("".join(f"file '{f}'\n" for f in files))
     subprocess.run(["ffmpeg","-y","-loglevel","error","-f","concat","-safe","0","-i",f"{out}/list.txt","-c","copy",f"{out}/v.mp4"], check=True)
-    subprocess.run(["ffmpeg","-y","-loglevel","error","-i",f"{out}/v.mp4","-f","lavfi","-i","anullsrc=r=44100:cl=stereo",
-                    "-c:v","copy","-c:a","aac","-shortest","-movflags","+faststart",f"{out}/reel.part.mp4"], check=True)
+    total = sum(d for d,_ in scenes)
+    if "kendi-muzik" in sys.argv:  # yerleşik fon müziği
+        subprocess.run(["python3", f"{D}/music.py", str(total), f"{out}/music.wav"], check=True)
+        aud = ["-i", f"{out}/music.wav"]
+    else:  # varsayılan: sessiz iz, müzik Instagram kütüphanesinden eklenir
+        aud = ["-f","lavfi","-i","anullsrc=r=44100:cl=stereo"]
+    subprocess.run(["ffmpeg","-y","-loglevel","error","-i",f"{out}/v.mp4",*aud,
+                    "-map","0:v","-map","1:a","-c:v","copy","-c:a","aac","-b:a","128k","-shortest","-movflags","+faststart",f"{out}/reel.part.mp4"], check=True)
     os.replace(f"{out}/reel.part.mp4", f"{out}/reel.mp4")
     print(slug, sum(d for d,_ in scenes), "s")
 
 async def main():
-    stills = len(sys.argv) > 1
+    stills = "stills" in sys.argv
     async with async_playwright() as p:
         b = await p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--allow-file-access-from-files"])
         pg = await b.new_page(viewport={"width":W,"height":H})
-        for slug, sc in REELS.items(): await build(slug, sc, pg, stills)
+        only = [a for a in sys.argv[1:] if a not in ("stills", "kendi-muzik")]
+        for slug, sc in REELS.items():
+            if not only or slug in only: await build(slug, sc, pg, stills)
         await b.close()
 asyncio.run(main())
