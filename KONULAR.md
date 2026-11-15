@@ -22,3 +22,14 @@ Yeni gönderi hazırlarken bu listeyi kontrol et, aynı konuyu tekrarlama. Her h
 - [reels · Bilim Ne Diyor?] Çift empati problemi, diffusion chain — Crompton 2020, Autism
 - [reels · Bilim Ne Diyor?] Mikrobiyota farkı seçici beslenmeden — Yap 2021, Cell
 - [reels · Bilim Ne Diyor?] Bebeklerde göze bakma 2–6 ayda azalıyor — Jones & Klin 2013, Nature
+
+## 16–22 Kasım 2026
+- [carousel · Bilim Ne Diyor?] Bebeklikte göze bakma: deney nasıl yapıldı? — Jones & Klin 2013, Nature
+- [reels + carousel · Bilim Ne Diyor?] İlk izlenim deneyi (10 sn, yazılı metinde fark yok) — Sasson 2017, Scientific Reports
+- [ipucu] İşi küçük adımlara bölün (görev analizi) — Steinbrenner 2020
+- [reels + carousel] Video model: izleyerek öğrenmek — Bellini & Akullian 2007, Exceptional Children
+- [reels + carousel · Bilim Ne Diyor?] Nörotip eşleşmesi ve kaynaşma (çift empatinin devamı) — Crompton 2020, Frontiers in Psychology
+- [ipucu] Hareket molası — Steinbrenner 2020
+- [reels + carousel · Bilim Ne Diyor?] Yapboz sembolü ve olumsuz çağrışım — Gernsbacher 2018, Autism
+- [reels + carousel · Bilim Ne Diyor?] 28 kanıta dayalı uygulama + 5 kolay uygulama — Steinbrenner 2020, NCAEP
+- [hikâye] Sence? soruları: ilk izlenim süresi, kaynaşan ikililer, yapboz çağrışımları
