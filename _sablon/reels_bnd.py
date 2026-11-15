@@ -129,4 +129,5 @@ async def main():
         for slug, sc in REELS.items():
             if not only or slug in only: await build(slug, sc, pg, stills)
         await b.close()
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
