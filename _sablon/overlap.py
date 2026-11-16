@@ -12,7 +12,11 @@ JS = r"""
   const all = [...els, ...texts].map(e => {
     let r;
     if (e.tagName === 'text') r = e.getBoundingClientRect();
-    else { const rg = document.createRange(); rg.selectNodeContents(e); r = rg.getBoundingClientRect(); }
+    else {
+      const rg = document.createRange(); rg.selectNodeContents(e); const b = rg.getBoundingClientRect();
+      const fs = parseFloat(getComputedStyle(e).fontSize) || 0, ins = fs * 0.12;   // yazı tipi kutusunun boş üst/alt payı
+      r = {left: b.left, right: b.right, top: b.top + ins, bottom: b.bottom - ins, width: b.width, height: Math.max(0, b.height - 2*ins)};
+    }
     return {e, r, t: e.textContent.trim().slice(0, 40)};
   }).filter(o => o.r.width > 2 && o.r.height > 2);
   for (const o of all) if (o.r.left < -1 || o.r.top < -1 || o.r.right > W + 1 || o.r.bottom > H + 1) out.push('TAŞMA: ' + o.t);

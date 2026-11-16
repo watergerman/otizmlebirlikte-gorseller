@@ -33,3 +33,8 @@ Yeni gönderi hazırlarken bu listeyi kontrol et, aynı konuyu tekrarlama. Her h
 - [reels + carousel · Bilim Ne Diyor?] Yapboz sembolü ve olumsuz çağrışım — Gernsbacher 2018, Autism
 - [reels + carousel · Bilim Ne Diyor?] 28 kanıta dayalı uygulama + 5 kolay uygulama — Steinbrenner 2020, NCAEP
 - [hikâye] Sence? soruları: ilk izlenim süresi, kaynaşan ikililer, yapboz çağrışımları
+- [reels · Bilim Ne Diyor?] PACT: ebeveyn aracılı müdahale, 6 yıl sonra — Pickles ve ark. 2016, The Lancet (16 Kasım, ek)
+
+## 18 Kasım 2026 (Çarşamba, ek doldurma)
+- [hikâye · Sence?] Ağırlıklı yelek dikkat/oturmayı artırır mı?
+- [reels + carousel · Bilim Ne Diyor?] Ağırlıklı yelekler işe yarıyor mu? — Stephenson & Carter 2009 JADD 39(1); Taylor ve ark. 2017 RASD
