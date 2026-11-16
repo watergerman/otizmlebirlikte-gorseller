@@ -1,5 +1,6 @@
 """Bilim Ne Diyor? Reels üretici. Kullanım: python3 reels_bnd.py [stills]"""
 import asyncio, subprocess, os, sys, json
+from overlap import check as _overlap_check
 from playwright.async_api import async_playwright
 from lib import font_css, D
 
@@ -97,8 +98,11 @@ async def build(slug, scenes, pg, stills):
         await pg.evaluate("document.fonts.ready")
         await pg.evaluate("document.getAnimations().forEach(a=>a.pause())")
         async def at(t): await pg.evaluate(f"document.getAnimations().forEach(a=>{{a.currentTime={t*1000}}})")
+        await at(dur - 0.05)
+        _iss = await _overlap_check(pg, f"{slug} sahne {k}")
+        if _iss and not stills: raise SystemExit(f"{slug} sahne {k}: yazı çakışması var, video üretilmedi")
         if stills:
-            await at(dur - 0.05); await pg.screenshot(path=f"{out}/s{k}-end.png"); continue
+            await pg.screenshot(path=f"{out}/s{k}-end.png"); continue
         tmp = f"{out}/s{k}.part.mp4"
         ff = subprocess.Popen(["ffmpeg","-y","-loglevel","error","-f","image2pipe","-framerate",str(FPS),"-c:v","mjpeg","-i","-",
               "-vf","format=yuv420p","-c:v","libx264","-crf","18","-preset","veryfast","-pix_fmt","yuv420p","-r",str(FPS),tmp], stdin=subprocess.PIPE)
@@ -129,5 +133,4 @@ async def main():
         for slug, sc in REELS.items():
             if not only or slug in only: await build(slug, sc, pg, stills)
         await b.close()
-if __name__ == "__main__":
-    asyncio.run(main())
+asyncio.run(main())
