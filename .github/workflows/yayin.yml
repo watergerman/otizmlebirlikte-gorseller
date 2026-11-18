@@ -1,0 +1,45 @@
+name: Instagram yayin
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      check:
+        description: "Yalnizca hesabi oku (paylasma)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: yayin
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  yayin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hesap kontrolu
+        if: ${{ inputs.check }}
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python3 _yayin/publish.py --check
+      - name: Saati gelenleri yayinla
+        if: ${{ !inputs.check }}
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python3 _yayin/publish.py
+      - name: Durumu kaydet
+        if: ${{ always() && !inputs.check }}
+        run: |
+          git config user.name "watergerman"
+          git config user.email "info@watergerman.com.tr"
+          git add _yayin/yayinlanan.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Yayin durumu guncellendi [skip ci]"
+            git pull --rebase -q && git push -q
+          fi
