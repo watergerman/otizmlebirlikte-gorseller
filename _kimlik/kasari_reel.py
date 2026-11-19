@@ -90,13 +90,13 @@ def k3():
     svg = (f'<svg width="1080" height="1920" style="position:absolute;left:0;top:0">{base}{newl}{nodes}'
            f'<g class="drop" style="--d:1.6s">{kid(*child, A, .9, ring=True)}</g></svg>')
     lab = (f'<div class="hand write" style="--d:2.4s;--t:.6s;position:absolute;left:690px;top:680px;font-size:40px;transform:rotate(-3deg)">kenarda</div>'
-           f'<div class="hand write" style="--d:8.0s;--t:.8s;position:absolute;left:170px;top:1260px;font-size:46px;transform:rotate(-2deg)">arkadaşları eğitilince bağlar ona uzandı</div>')
+           f'<div class="hand write" style="--d:8.0s;--t:.8s;position:absolute;left:170px;top:1260px;font-size:40px;transform:rotate(-2deg)">arkadaşları eğitilince onu da aralarına aldılar</div>')
     body = (f'<div class="w"><div class="no up" style="--d:.1s"><b>GÖZLEM</b>SINIFIN ARKADAŞLIK AĞI</div>'
             f'<h2 class="up" style="--d:.3s">Kim kiminle <span class="hl" style="--d:1.0s">arkadaş?</span></h2></div>{svg}{lab}')
     return 13.0, doc(body)
 
 def k4():
-    items = ["Sınıfın arkadaşlık ağında daha merkezî oldular", "Daha çok arkadaş olarak seçildiler",
+    items = ["Sınıfta daha çok arkadaşla bağ kurdular", "Sınıf arkadaşları onları daha sık “arkadaşım” diye gösterdi",
              "Teneffüste daha az yalnız kaldılar", "Etki 3 ay sonra da sürüyordu"]
     li = ""
     for k, t in enumerate(items):
@@ -107,12 +107,12 @@ def k4():
             f'<div class="hand write" style="--d:10.9s;--t:.5s;font-size:44px">şaşırtıcı olan</div>'
             f'<div style="font-size:32px;line-height:1.35;margin-top:6px;color:#3A4560">Yalnızca çocuğa verilen eğitim tek başına bu farkı yaratmadı.</div></div>')
     body = (f'<div class="w"><div class="no up" style="--d:.1s"><b>BULGU</b>ARKADAŞLARI EĞİTİLEN GRUPLAR</div>'
-            f'<h2 class="up" style="--d:.3s">Otizmli çocuklar <span class="hl" style="--d:.9s">ne yaşadı?</span></h2>{li}</div>{note}')
+            f'<h2 class="up" style="--d:.3s">Otizmli çocuklarda <span class="hl" style="--d:.9s">ne değişti?</span></h2>{li}</div>{note}')
     return 15.0, doc(body)
 
 def k5():
     body = (f'<div class="w"><div class="no up" style="--d:.1s"><b>SINIFTA</b>NE YAPABİLİRSİNİZ?</div>'
-            f'<h2 class="up" style="--d:.3s">Arkadaşlarını <span class="hl" style="--d:1.1s">oyunun parçası</span> yapın</h2>'
+            f'<h2 class="up" style="--d:.3s">Sınıf arkadaşlarını da <span class="hl" style="--d:1.1s">işin içine</span> katın</h2>'
             f'<div class="up" style="--d:1.8s;font-size:40px;line-height:1.38;font-weight:500;color:#3A4560;margin-top:40px">Birkaç gönüllü öğrenciye, otizmli arkadaşlarını oyuna nasıl katabileceklerini gösterin.</div></div>'
             f'<div class="fig drop" style="--d:4.4s;--r:-1.2deg;left:170px;right:120px;top:1110px;padding:28px 32px"><div class="tape" style="left:-24px;top:-22px"></div>'
             f'<div class="hand write" style="--d:4.9s;--t:.6s;font-size:44px">Size bir sorumuz var</div>'

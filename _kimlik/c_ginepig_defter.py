@@ -28,11 +28,11 @@ def p3():
     return doc("bnd", body, "O'Haire ve ark. (2013), PLoS ONE", "3 / 5")
 
 def p5():
-    items = ["Çocuğun ilgisini çeken bir canlıyı ya da nesneyi oyunun merkezine koyun",
-             "Arkadaşlarını da oyuna katın; ortak ilgi sohbeti kendiliğinden başlatır",
+    items = ["Çocuğun ilgisini çeken bir canlı ya da nesneyle oyuna başlayın",
+             "Arkadaşlarını da çağırın; ortak bir ilgi sohbeti kendiliğinden açar",
              "Hayvanla etkileşim her zaman yetişkin gözetiminde ve çocuğun isteğine göre olsun"]
     li = "".join(f'<div class="it"><div class="ck">{CK}</div><div>{t}</div></div>' for t in items)
-    body = (f'<div class="w"><div class="no"><b>SINIFTA VE EVDE</b>NE YAPABİLİRSİNİZ?</div><h2>Oyunu çocuğun <span class="hl">ilgisi üzerine</span> kurun</h2>{li}'
+    body = (f'<div class="w"><div class="no"><b>SINIFTA VE EVDE</b>NE YAPABİLİRSİNİZ?</div><h2>Oyuna çocuğun <span class="hl">sevdiği şeyle</span> başlayın</h2>{li}'
             f'<div style="font-family:\'Mono\';font-size:22px;line-height:1.5;color:{MUTED};margin-top:44px">Kaynak: O\'Haire, McKenzie, Beck &amp; Slaughter (2013). PLoS ONE, 8(2), e57010.</div></div>{BOOK}')
     return doc("bnd", body, "Otizm Spektrum Bozukluğu Eğitimi Uzmanı", "5 / 5")
 

@@ -52,12 +52,12 @@ def deney():
             f'<path d="M-62 6 C-64 -30 -20 -44 14 -40 C40 -60 78 -44 76 -14 C80 6 60 30 20 32 C-20 36 -60 34 -62 6 Z" fill="#E7B98A"/><path d="M30 -50 c4 -14 18 -14 18 -2" fill="#E7B98A"/>'
             f'<circle cx="54" cy="-18" r="4" fill="{INK}"/><path d="M-40 32 v12 M-10 34 v12 M30 30 v12"/></g>')
     pigs = f'<svg width="320" height="230" viewBox="-160 -115 320 230">{gp(-66, 10, .8)}{gp(74, 28, .7, True)}</svg>'
-    body = (f'<div class="w"><div class="no"><b>DENEY 07</b>NASIL YAPILDI?</div><h2>Aynı çocuklar, <span class="hl">iki ayrı oturum</span></h2></div>'
+    body = (f'<div class="w"><div class="no"><b>DENEY 07</b>NASIL YAPILDI?</div><h2>Her grup <span class="hl">iki kez</span> oynadı</h2></div>'
             f'<div class="fig" style="left:170px;width:360px;top:560px;height:370px;padding:22px;transform:rotate(-1deg)"><div class="tape" style="left:100px;top:-22px"></div>{toys}'
             f'<div class="hand" style="text-align:center;font-size:42px">oyuncaklar</div></div>'
             f'<div class="fig" style="left:570px;width:380px;top:560px;height:370px;padding:22px;transform:rotate(1.5deg)"><div class="tape" style="left:115px;top:-22px;transform:rotate(5deg)"></div>{pigs}'
             f'<div class="hand" style="text-align:center;font-size:42px">iki ginepig</div></div>'
-            f'<div class="p" style="position:absolute;left:170px;right:90px;top:990px">5–12 yaş arası 33 otizmli çocuk, iki sınıf arkadaşıyla 10\'ar dakika oynadı.</div>')
+            f'<div class="p" style="position:absolute;left:170px;right:90px;top:990px">Önce oyuncaklarla, sonra iki ginepigle. Her grupta bir otizmli çocuk ve iki sınıf arkadaşı vardı.</div>')
     return doc("bnd", body, "O'Haire ve ark. (2013), PLoS ONE", "2 / 5")
 
 def rakam():
