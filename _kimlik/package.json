@@ -1,0 +1,34 @@
+{
+  "name": "kimlik",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/bricolage-grotesque": "^5.3.0",
+    "@fontsource/caveat": "^5.3.0",
+    "@fontsource/courier-prime": "^5.3.0",
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/geist-mono": "^5.3.0",
+    "@fontsource/geist-sans": "^5.3.0",
+    "@fontsource/gochi-hand": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/instrument-sans": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@fontsource/kalam": "^5.3.0",
+    "@fontsource/newsreader": "^5.3.0",
+    "@fontsource/onest": "^5.3.1",
+    "@fontsource/patrick-hand": "^5.3.0",
+    "@fontsource/recursive": "^5.3.0",
+    "@fontsource/shantell-sans": "^5.3.0",
+    "@fontsource/sometype-mono": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "@fontsource/special-elite": "^5.3.0",
+    "@fontsource/young-serif": "^5.3.0"
+  }
+}
