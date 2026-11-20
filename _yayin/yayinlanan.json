@@ -30,8 +30,9 @@
   "comment_id": "17994578838077337"
  },
  "2026-11-20-carousel-ginepig": {
-  "error": "POST 17841473773803559/media -> 400: {\"error\":{\"message\":\"Only photo or video can be accepted as media type.\",\"code\":9004,\"type\":\"OAuthException\",\"error_subcode\":2207052,\"is_transient\":false,\"error_user_msg\":\"Medya şu URI'den alınamadı: https://cdn.jsdelivr.net/gh/watergerman/otizmlebirlikte-gorseller@4c4985729978922e6b6967877fa471a0e2c3abd7/2026-11-20-c10-ginepig/5.jpg.Daha fazla bilgi için lütfen geliştirme belgelerimizdeki kısıtlamalar kısmını kontrol edin: https://developers.facebook.com/doc",
-  "tries": 1,
-  "at": "2026-11-20T20:30:00+03:00"
+  "media_id": "18429012547159740",
+  "published_at": "2026-11-20T17:52:51.477840+00:00",
+  "permalink": "https://www.instagram.com/p/Df-PFHBmg1c/",
+  "comment_id": "18122405518954842"
  }
 }
