@@ -45,11 +45,13 @@ def p_karsilastirma(kose, no, label, title, sanilan, bulunan, note="", foot="", 
             + (f'<div class="hand" style="position:absolute;left:170px;right:90px;top:1050px;font-size:42px;transform:rotate(-2deg)">{note}</div>' if note else ""))
     return doc(kose, body, foot, page)
 
-def p_kontrol(kose, no, label, title, items, limit="", foot="", page="", book=False):
+def p_kontrol(kose, no, label, title, items, limit="", foot="", page="", book=False, note="", note_title=""):
     li = "".join(f'<div class="it"><div class="ck">{CK}</div><div>{t}</div></div>' for t in items)
     body = (f'<div class="w"><div class="no"><b>{no}</b>{label}</div><h2>{title}</h2>{li}'
             + (f'<div style="font-family:\'Mono\';font-size:23px;line-height:1.5;color:{MUTED};margin-top:40px">{limit}</div>' if limit else "")
-            + f'</div>' + (BOOK if book else ""))
+            + f'</div>' + (BOOK if book else "")
+            + (f'<div class="fig" style="left:170px;right:90px;top:965px;padding:24px 30px;transform:rotate(-.8deg)"><div class="tape" style="left:-24px;top:-22px"></div>'
+               f'<div class="hand" style="font-size:40px">{note_title}</div><div class="p" style="font-size:31px;margin-top:4px">{note}</div></div>' if note else ""))
     return doc(kose, body, foot, page)
 
 def p_soru(kose, question, kunye="", foot="", page=""):
